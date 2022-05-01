@@ -10,5 +10,5 @@ before_install:
   - docker build -t joaoguilherme1/recipe-app .
 
 script:
-  - docker-compose run app sh -c "python manage.py test && flake8"
+  - docker-compose run app sh -c "python manage.py wait_for_db && python manage.py test && flake8"
 
